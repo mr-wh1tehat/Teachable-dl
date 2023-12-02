@@ -515,10 +515,10 @@ class TeachableDownloader:
                 self.driver.get(video["link"])
                 self.driver.implicitly_wait(30)
             logging.info("Downloading lecture: " + video["title"])
-
-            logging.info("Disabling autoplay")
-            self.driver.execute_script('var checkbox = document.getElementById("custom-toggle-autoplay");'
-                                       'if (checkbox.checked) {checkbox.click();}')
+#Commenting autoplay disabler because it is causing the script to crash if autoplay is already disabled            
+            #logging.info("Disabling autoplay")
+            #self.driver.execute_script('var checkbox = document.getElementById("custom-toggle-autoplay");'
+            #                           'if (checkbox.checked) {checkbox.click();}')
 
             try:
                 logging.info("Saving html")
